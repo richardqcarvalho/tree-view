@@ -1,1 +1,11 @@
 @import 'tailwindcss';
+
+:root {
+  --color-header: #17192d;
+}
+
+#root {
+  width: 100svw;
+  height: 100svh;
+  overflow: hidden;
+}

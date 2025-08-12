@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { StoreT } from '../types'
+import type { StoreT } from '../types/store'
 
 const useStore = create<StoreT>(set => ({
   companyId: '',

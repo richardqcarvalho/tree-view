@@ -1,0 +1,44 @@
+import { useQuery } from '@tanstack/react-query'
+import { useEffect } from 'react'
+import { getCompanies } from '../actions/company'
+import useStore from '../store'
+import type { CompanyT } from '../types/company'
+
+export default function CompanySelect() {
+  const {
+    data: companies,
+    isPending,
+    isSuccess,
+  } = useQuery<CompanyT[]>({
+    queryKey: ['get-companies'],
+    queryFn: getCompanies,
+  })
+  const { companyId, setCompanyId } = useStore()
+
+  useEffect(() => {
+    if (isSuccess && companyId === '') setCompanyId(companies[0].id)
+  }, [companies])
+
+  if (isPending)
+    return (
+      <div>
+        <span>Loading companies...</span>
+      </div>
+    )
+
+  return (
+    <select
+      onChange={e => setCompanyId(e.target.value)}
+      className='text-end'
+    >
+      {companies.map(company => (
+        <option
+          key={company.id}
+          value={company.id}
+        >
+          {company.name}
+        </option>
+      ))}
+    </select>
+  )
+}
