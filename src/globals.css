@@ -1,7 +1,8 @@
 @import 'tailwindcss';
 
-:root {
+@theme {
   --color-header: #17192d;
+  --color-select: #2188ff;
 }
 
 #root {

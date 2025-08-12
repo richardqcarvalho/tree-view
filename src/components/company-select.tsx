@@ -29,7 +29,7 @@ export default function CompanySelect() {
   return (
     <select
       onChange={e => setCompanyId(e.target.value)}
-      className='text-end'
+      className='bg-select flex items-center justify-center rounded-sm p-1 text-white'
     >
       {companies.map(company => (
         <option
