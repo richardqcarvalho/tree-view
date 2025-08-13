@@ -3,8 +3,8 @@ export type AssetDataT = {
   name: string
   parentId?: string
   sensorId?: string
-  sensorType?: string
-  status?: string
+  sensorType?: 'energy' | 'vibration'
+  status?: 'operating' | 'alert'
   gatewayId?: string
   locationId?: string
 }

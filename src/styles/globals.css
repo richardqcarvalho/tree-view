@@ -3,6 +3,8 @@
 @theme {
   --color-header: #17192d;
   --color-select: #2188ff;
+  --color-operating: #52c41a;
+  --color-alert: #ed3833;
 }
 
 #root {
