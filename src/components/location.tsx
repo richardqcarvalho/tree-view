@@ -1,4 +1,4 @@
-import locationSvg from '@/images/location.svg'
+import LocationSvg from '@/images/location.svg?react'
 import type { LocationPropsT } from '@/types/location'
 import clsx from 'clsx'
 import { ChevronRight } from 'lucide-react'
@@ -25,10 +25,7 @@ export default function Location({ location }: LocationPropsT) {
             })}
           />
         )}
-        <img
-          src={locationSvg}
-          className='h-4'
-        />
+        <LocationSvg className='text-select h-4' />
         {location.name}
       </button>
       {showChildren && (
