@@ -1,7 +1,7 @@
+import { getAssets } from '@/actions/asset'
+import useStore from '@/store'
+import type { AssetT } from '@/types/asset'
 import { useQuery } from '@tanstack/react-query'
-import { getAssets } from '../actions/assets'
-import useStore from '../store'
-import type { AssetT } from '../types/asset'
 
 export default function Assets() {
   const { companyId } = useStore()

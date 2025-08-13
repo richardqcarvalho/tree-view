@@ -1,8 +1,8 @@
+import { getCompanies } from '@/actions/company'
+import useStore from '@/store'
+import type { CompanyT } from '@/types/company'
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
-import { getCompanies } from '../actions/company'
-import useStore from '../store'
-import type { CompanyT } from '../types/company'
 
 export default function CompanySelect() {
   const {

@@ -1,7 +1,7 @@
-import Assets from '../components/assets'
-import CompanySelect from '../components/company-select'
-import Locations from '../components/locations'
-import tractianLogo from '../images/logo.svg'
+import Assets from '@/components/assets'
+import CompanySelect from '@/components/company-select'
+import Locations from '@/components/locations'
+import tractianLogo from '@/images/logo.svg'
 
 export default function Home() {
   return (

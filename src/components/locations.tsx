@@ -1,8 +1,8 @@
+import { getLocations } from '@/actions/location'
+import Location from '@/components/location'
+import useStore from '@/store'
+import type { StructuredLocationT } from '@/types/location'
 import { useQuery } from '@tanstack/react-query'
-import { getLocations } from '../actions/location'
-import useStore from '../store'
-import type { StructuredLocationT } from '../types/location'
-import Location from './location'
 
 export default function Locations() {
   const { companyId } = useStore()

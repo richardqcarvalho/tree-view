@@ -1,4 +1,4 @@
-import type { LocationDataT, StructuredLocationT } from '../types/location'
+import type { LocationDataT, StructuredLocationT } from '@/types/location'
 
 export async function getLocations(companyId: string) {
   const response = await fetch(
