@@ -9,6 +9,11 @@ import { useState } from 'react'
 
 export default function Asset({ asset }: AssetPropsT) {
   const [showChildren, setShowChildren] = useState(false)
+  const statusClassName = clsx([
+    'w-2',
+    asset.status === 'alert' ? 'text-alert' : 'text-operating',
+  ])
+  const svgClassName = 'text-select h-4'
 
   return (
     <div>
@@ -29,17 +34,17 @@ export default function Asset({ asset }: AssetPropsT) {
           />
         )}
         {asset.children ? (
-          <AssetSvg className='text-select h-4' />
+          <AssetSvg className={svgClassName} />
         ) : (
-          <ComponentSvg className='text-select h-4' />
+          <ComponentSvg className={svgClassName} />
         )}
         {asset.name}
         {asset.status && (
           <>
             {asset.sensorType === 'energy' ? (
-              <EnergySvg className={`w-2 text-${asset.status}`} />
+              <EnergySvg className={statusClassName} />
             ) : (
-              <VibrationSvg className={`w-2 text-${asset.status}`} />
+              <VibrationSvg className={statusClassName} />
             )}
           </>
         )}
