@@ -10,7 +10,7 @@ export default function Location({ location }: LocationPropsT) {
   return (
     <div>
       <button
-        className='flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1 hover:bg-blue-300'
+        className='hover:bg-select flex cursor-pointer items-center gap-2 rounded-sm px-3 py-1 hover:text-white hover:*:text-white'
         key={location.id}
         onClick={() => {
           if (location.children) setShowChildren(previous => !previous)

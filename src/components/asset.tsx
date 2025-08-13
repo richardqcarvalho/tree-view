@@ -11,14 +11,14 @@ export default function Asset({ asset }: AssetPropsT) {
   const [showChildren, setShowChildren] = useState(false)
   const statusClassName = clsx([
     'w-2',
-    asset.status === 'alert' ? 'text-alert' : 'text-operating',
+    asset.status === 'alert' ? 'text-alert!' : 'text-operating!',
   ])
   const svgClassName = 'text-select h-4'
 
   return (
     <div>
       <button
-        className='flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1 hover:bg-blue-300'
+        className='hover:bg-select flex cursor-pointer items-center gap-2 rounded-sm px-3 py-1 hover:text-white hover:*:text-white'
         key={asset.id}
         onClick={() => {
           if (asset.children) setShowChildren(previous => !previous)
