@@ -2,7 +2,7 @@ import type { LocationDataT, StructuredLocationT } from '../types/location'
 
 export async function getLocations(companyId: string) {
   const response = await fetch(
-    `https://fake-api.tractian.com/companies/${companyId}/locations`,
+    `${import.meta.env.VITE_API_URL}/companies/${companyId}/locations`,
   )
   const data: LocationDataT[] = await response.json()
 

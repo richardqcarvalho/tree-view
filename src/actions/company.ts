@@ -1,5 +1,5 @@
 export async function getCompanies() {
-  const response = await fetch('https://fake-api.tractian.com/companies')
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/companies`)
   const data = await response.json()
 
   return data
