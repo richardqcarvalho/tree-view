@@ -1,4 +1,5 @@
-import assetSvg from '@/images/asset.svg'
+import AssetSvg from '@/images/asset.svg?react'
+import ComponentSvg from '@/images/component.svg?react'
 import type { AssetPropsT } from '@/types/asset'
 import clsx from 'clsx'
 import { ChevronRight } from 'lucide-react'
@@ -25,10 +26,11 @@ export default function Asset({ asset }: AssetPropsT) {
             })}
           />
         )}
-        <img
-          src={assetSvg}
-          className='h-4'
-        />
+        {asset.children ? (
+          <AssetSvg className='text-select h-4' />
+        ) : (
+          <ComponentSvg className='text-select h-4' />
+        )}
         {asset.name}
       </button>
       {showChildren && (
