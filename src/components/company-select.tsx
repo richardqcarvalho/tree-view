@@ -21,9 +21,12 @@ export default function CompanySelect() {
 
   if (isPending)
     return (
-      <div>
-        <span>Loading companies...</span>
-      </div>
+      <select
+        className='bg-select flex animate-pulse items-center justify-center rounded-sm p-1 text-white'
+        disabled
+      >
+        <option>Loading companies...</option>
+      </select>
     )
 
   return (
