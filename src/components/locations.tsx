@@ -1,11 +1,11 @@
 import { getLocations } from '@/actions/location'
 import Location from '@/components/location'
-import useStore from '@/store'
+import { useCompanyStore } from '@/store'
 import type { StructuredLocationT } from '@/types/location'
 import { useQuery } from '@tanstack/react-query'
 
 export default function Locations() {
-  const { companyId } = useStore()
+  const { companyId } = useCompanyStore()
   const { data: locations, isPending } = useQuery<StructuredLocationT[]>({
     queryKey: ['get-locations', companyId],
     queryFn: () => getLocations(companyId),

@@ -1,10 +1,10 @@
 import { getAssets } from '@/actions/asset'
-import useStore from '@/store'
+import { useCompanyStore } from '@/store'
 import type { AssetT } from '@/types/asset'
 import { useQuery } from '@tanstack/react-query'
 
 export default function Assets() {
-  const { companyId } = useStore()
+  const { companyId } = useCompanyStore()
   const { data: assets, isPending } = useQuery<AssetT[]>({
     queryKey: ['get-assets', companyId],
     queryFn: () => getAssets(companyId),

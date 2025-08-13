@@ -1,5 +1,5 @@
 import { getCompanies } from '@/actions/company'
-import useStore from '@/store'
+import { useCompanyStore } from '@/store'
 import type { CompanyT } from '@/types/company'
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
@@ -13,7 +13,7 @@ export default function CompanySelect() {
     queryKey: ['get-companies'],
     queryFn: getCompanies,
   })
-  const { companyId, setCompanyId } = useStore()
+  const { companyId, setCompanyId } = useCompanyStore()
 
   useEffect(() => {
     if (isSuccess && companyId === '') setCompanyId(companies[0].id)
