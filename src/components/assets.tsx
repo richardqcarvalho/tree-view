@@ -1,11 +1,12 @@
 import { getAssets } from '@/actions/asset'
+import Asset from '@/components/asset'
 import { useCompanyStore } from '@/store'
-import type { AssetT } from '@/types/asset'
+import type { StructuredAssetT } from '@/types/asset'
 import { useQuery } from '@tanstack/react-query'
 
 export default function Assets() {
   const { companyId } = useCompanyStore()
-  const { data: assets, isPending } = useQuery<AssetT[]>({
+  const { data: assets, isPending } = useQuery<StructuredAssetT[]>({
     queryKey: ['get-assets', companyId],
     queryFn: () => getAssets(companyId),
     enabled: companyId !== '',
@@ -19,9 +20,12 @@ export default function Assets() {
     )
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col p-4'>
       {assets.map(asset => (
-        <span key={asset.id}>{asset.name}</span>
+        <Asset
+          key={asset.id}
+          asset={asset}
+        />
       ))}
     </div>
   )
