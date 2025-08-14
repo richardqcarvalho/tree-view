@@ -24,8 +24,19 @@ export default function Elements() {
 
   if (isPending)
     return (
-      <div>
-        <span>Loading elements...</span>
+      <div className='m-2 flex flex-col gap-2 overflow-auto border border-zinc-300 p-4'>
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
       </div>
     )
 
