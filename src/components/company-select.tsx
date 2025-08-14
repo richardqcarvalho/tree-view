@@ -22,7 +22,7 @@ export default function CompanySelect() {
   if (isPending)
     return (
       <select
-        className='bg-select flex animate-pulse items-center justify-center rounded-sm p-1 text-white'
+        className='flex animate-pulse items-center justify-center rounded-sm bg-zinc-300 p-1 text-white'
         disabled
       >
         <option>Loading companies...</option>
