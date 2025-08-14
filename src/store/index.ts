@@ -1,9 +1,14 @@
-import type { StoreT } from '@/types/store'
+import type { CompanyStoreT, ElementStoreT } from '@/types/store'
 import { create } from 'zustand'
 
-const useCompanyStore = create<StoreT>(set => ({
+const useCompanyStore = create<CompanyStoreT>(set => ({
   companyId: '',
-  setCompanyId: (id: string) => set({ companyId: id }),
+  setCompanyId: id => set({ companyId: id }),
 }))
 
-export { useCompanyStore }
+const useElementStore = create<ElementStoreT>(set => ({
+  elements: [],
+  setElements: elements => set({ elements }),
+}))
+
+export { useCompanyStore, useElementStore }

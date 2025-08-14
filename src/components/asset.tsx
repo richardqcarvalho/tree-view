@@ -6,8 +6,10 @@ import type { AssetPropsT } from '@/types/asset'
 import clsx from 'clsx'
 import { ChevronRight } from 'lucide-react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 export default function Asset({ asset }: AssetPropsT) {
+  const navigate = useNavigate()
   const [showChildren, setShowChildren] = useState(false)
   const statusClassName = clsx([
     'w-2',
@@ -22,6 +24,7 @@ export default function Asset({ asset }: AssetPropsT) {
         key={asset.id}
         onClick={() => {
           if (asset.children) setShowChildren(previous => !previous)
+          else navigate(`/${asset.id}`)
         }}
       >
         {asset.children && (

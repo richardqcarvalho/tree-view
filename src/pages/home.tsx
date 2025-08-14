@@ -1,6 +1,7 @@
 import CompanySelect from '@/components/company-select'
 import Elements from '@/components/elements'
 import TractianLogo from '@/images/logo.svg?react'
+import { Outlet } from 'react-router'
 
 export default function Home() {
   return (
@@ -12,8 +13,9 @@ export default function Home() {
           <CompanySelect />
         </div>
       </div>
-      <div className='flex flex-col overflow-auto'>
+      <div className='flex overflow-auto'>
         <Elements />
+        <Outlet />
       </div>
     </div>
   )
