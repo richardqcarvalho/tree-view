@@ -1,6 +1,5 @@
-import Assets from '@/components/assets'
 import CompanySelect from '@/components/company-select'
-import Locations from '@/components/locations'
+import Elements from '@/components/elements'
 import TractianLogo from '@/images/logo.svg?react'
 
 export default function Home() {
@@ -14,8 +13,7 @@ export default function Home() {
         </div>
       </div>
       <div className='flex flex-col overflow-auto'>
-        <Locations />
-        <Assets />
+        <Elements />
       </div>
     </div>
   )

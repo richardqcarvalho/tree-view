@@ -1,3 +1,4 @@
+import Asset from '@/components/asset'
 import LocationSvg from '@/images/location.svg?react'
 import type { LocationPropsT } from '@/types/location'
 import clsx from 'clsx'
@@ -31,10 +32,13 @@ export default function Location({ location }: LocationPropsT) {
       {showChildren && (
         <div className='ml-8'>
           {location.children.map(child => (
-            <Location
-              key={child.id}
-              location={child}
-            />
+            <div key={child.id}>
+              {Object.keys(child).indexOf('status') === -1 ? (
+                <Location location={child} />
+              ) : (
+                <Asset asset={child} />
+              )}
+            </div>
           ))}
         </div>
       )}
