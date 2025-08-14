@@ -17,6 +17,7 @@ export default function Component() {
       if (element.id === id) return element
       else if (element.children) {
         const child = getComponentById(element.children, componentId)
+
         if (child) return child
       }
     }
@@ -33,11 +34,11 @@ export default function Component() {
   if (!component) return
 
   return (
-    <div className='flex flex-col p-5'>
+    <div className='m-2 flex flex-1 flex-col overflow-auto border border-zinc-300 p-4'>
       <span>{component.name}</span>
-      <span>{component.status}</span>
-      <span>{component.sensorType}</span>
-      <span>{component.sensorId}</span>
+      {component.status && <span>{component.status}</span>}
+      {component.sensorType && <span>{component.sensorType}</span>}
+      {component.sensorId && <span>{component.sensorId}</span>}
     </div>
   )
 }

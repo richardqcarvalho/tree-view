@@ -27,7 +27,7 @@ export default function Location({ location }: LocationPropsT) {
           />
         )}
         <LocationSvg className='text-select h-4' />
-        {location.name}
+        <span className='whitespace-nowrap'>{location.name}</span>
       </button>
       {showChildren && (
         <div className='ml-8'>

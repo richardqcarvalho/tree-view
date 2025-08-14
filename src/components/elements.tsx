@@ -30,7 +30,7 @@ export default function Elements() {
     )
 
   return (
-    <div className='flex flex-col p-4'>
+    <div className='m-2 flex flex-col overflow-auto border border-zinc-300 p-4'>
       {elements.map(location => (
         <div key={location.id}>
           {Object.keys(location).indexOf('status') === -1 ? (

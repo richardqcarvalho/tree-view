@@ -41,7 +41,7 @@ export default function Asset({ asset }: AssetPropsT) {
         ) : (
           <ComponentSvg className={svgClassName} />
         )}
-        {asset.name}
+        <span className='whitespace-nowrap'>{asset.name}</span>
         {asset.status && (
           <>
             {asset.sensorType === 'energy' ? (

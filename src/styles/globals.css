@@ -10,5 +10,5 @@
 #root {
   width: 100svw;
   height: 100svh;
-  overflow: hidden;
+  display: flex;
 }
