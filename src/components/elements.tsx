@@ -42,15 +42,23 @@ export default function Elements() {
 
   return (
     <div className='m-2 flex flex-col overflow-auto border border-zinc-300 p-4'>
-      {filteredElements.map(element => (
-        <div key={element.id}>
-          {Object.keys(element).indexOf('status') === -1 ? (
-            <Location location={element} />
-          ) : (
-            <Asset asset={element} />
-          )}
+      {filteredElements.length === 0 ? (
+        <div className='flex h-full w-72 items-center justify-center'>
+          <span className='text-zinc-300'>No elements</span>
         </div>
-      ))}
+      ) : (
+        <>
+          {filteredElements.map(element => (
+            <div key={element.id}>
+              {Object.keys(element).indexOf('status') === -1 ? (
+                <Location location={element} />
+              ) : (
+                <Asset asset={element} />
+              )}
+            </div>
+          ))}
+        </>
+      )}
     </div>
   )
 }
