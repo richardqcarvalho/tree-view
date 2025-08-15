@@ -1,5 +1,6 @@
 import CompanySelect from '@/components/company-select'
 import Elements from '@/components/elements'
+import SearchInput from '@/components/search-input'
 import TractianLogo from '@/images/logo.svg?react'
 import { Outlet } from 'react-router'
 
@@ -13,9 +14,12 @@ export default function Home() {
           <CompanySelect />
         </div>
       </div>
-      <div className='flex h-full w-full overflow-hidden'>
-        <Elements />
-        <Outlet />
+      <div className='flex h-full w-full flex-col overflow-hidden'>
+        <SearchInput />
+        <div className='flex h-full overflow-hidden'>
+          <Elements />
+          <Outlet />
+        </div>
       </div>
     </div>
   )

@@ -17,7 +17,7 @@ export default function Location({ location }: LocationPropsT) {
           if (location.children) setShowChildren(previous => !previous)
         }}
       >
-        {location.children && (
+        {location.children && location.children.length > 0 && (
           <ChevronRight
             size={16}
             className={clsx({

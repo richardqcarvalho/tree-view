@@ -10,7 +10,7 @@ import { useNavigate, useParams } from 'react-router'
 export default function Component() {
   const navigate = useNavigate()
   const { componentId } = useParams()
-  const { elements } = useElementStore()
+  const { filteredElements } = useElementStore()
 
   function getComponentById(
     data: (StructuredAssetT | StructuredLocationT)[],
@@ -28,11 +28,14 @@ export default function Component() {
     return undefined
   }
 
-  const component: StructuredAssetT = getComponentById(elements, componentId)
+  const component: StructuredAssetT = getComponentById(
+    filteredElements,
+    componentId,
+  )
 
   useEffect(() => {
     if (!component) navigate('/')
-  }, [elements])
+  }, [filteredElements])
 
   if (!component) return
 

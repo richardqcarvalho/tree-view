@@ -27,7 +27,7 @@ export default function Asset({ asset }: AssetPropsT) {
           else navigate(`/${asset.id}`)
         }}
       >
-        {asset.children && (
+        {asset.children && asset.children.length > 0 && (
           <ChevronRight
             size={16}
             className={clsx({

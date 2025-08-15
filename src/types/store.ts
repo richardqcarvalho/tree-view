@@ -8,5 +8,9 @@ export type CompanyStoreT = {
 
 export type ElementStoreT = {
   elements: (StructuredAssetT | StructuredLocationT)[]
+  filteredElements: (StructuredAssetT | StructuredLocationT)[]
   setElements: (elements: (StructuredAssetT | StructuredLocationT)[]) => void
+  setFilteredElements: (
+    elements: (StructuredAssetT | StructuredLocationT)[],
+  ) => void
 }

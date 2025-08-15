@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 
 export default function Elements() {
   const { companyId } = useCompanyStore()
-  const { setElements } = useElementStore()
+  const { filteredElements, setElements } = useElementStore()
   const {
     data: elements,
     isPending,
@@ -42,12 +42,12 @@ export default function Elements() {
 
   return (
     <div className='m-2 flex flex-col overflow-auto border border-zinc-300 p-4'>
-      {elements.map(location => (
-        <div key={location.id}>
-          {Object.keys(location).indexOf('status') === -1 ? (
-            <Location location={location} />
+      {filteredElements.map(element => (
+        <div key={element.id}>
+          {Object.keys(element).indexOf('status') === -1 ? (
+            <Location location={element} />
           ) : (
-            <Asset asset={location} />
+            <Asset asset={element} />
           )}
         </div>
       ))}

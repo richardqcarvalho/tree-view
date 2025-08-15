@@ -8,7 +8,9 @@ const useCompanyStore = create<CompanyStoreT>(set => ({
 
 const useElementStore = create<ElementStoreT>(set => ({
   elements: [],
+  filteredElements: [],
   setElements: elements => set({ elements }),
+  setFilteredElements: elements => set({ filteredElements: elements }),
 }))
 
 export { useCompanyStore, useElementStore }
