@@ -1,16 +1,24 @@
-import type { CompanyStoreT, ElementStoreT } from '@/types/store'
+import type {
+  CheckboxStoreT,
+  CompanyStoreT,
+  ElementStoreT,
+} from '@/types/store'
 import { create } from 'zustand'
 
-const useCompanyStore = create<CompanyStoreT>(set => ({
+export const useCompanyStore = create<CompanyStoreT>(set => ({
   companyId: '',
   setCompanyId: id => set({ companyId: id }),
 }))
 
-const useElementStore = create<ElementStoreT>(set => ({
+export const useElementStore = create<ElementStoreT>(set => ({
   elements: [],
   filteredElements: [],
   setElements: elements => set({ elements }),
   setFilteredElements: elements => set({ filteredElements: elements }),
 }))
 
-export { useCompanyStore, useElementStore }
+export const useCheckboxStore = create<CheckboxStoreT>(set => ({
+  'energy-sensor': false,
+  critical: false,
+  setCheckbox: (checkbox, value) => set({ [checkbox]: value }),
+}))

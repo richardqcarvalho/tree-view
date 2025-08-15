@@ -14,3 +14,9 @@ export type ElementStoreT = {
     elements: (StructuredAssetT | StructuredLocationT)[],
   ) => void
 }
+
+export type CheckboxStoreT = {
+  'energy-sensor': boolean
+  critical: boolean
+  setCheckbox: (checkbox: 'energy-sensor' | 'critical', value: boolean) => void
+}

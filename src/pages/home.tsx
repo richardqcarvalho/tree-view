@@ -1,3 +1,4 @@
+import Checkbox from '@/components/checkbox'
 import CompanySelect from '@/components/company-select'
 import Elements from '@/components/elements'
 import SearchInput from '@/components/search-input'
@@ -14,9 +15,21 @@ export default function Home() {
           <CompanySelect />
         </div>
       </div>
-      <div className='flex h-full w-full flex-col overflow-hidden'>
-        <SearchInput />
-        <div className='flex h-full overflow-hidden'>
+      <div className='flex h-full w-full flex-col gap-4 overflow-hidden p-4'>
+        <div className='flex gap-4'>
+          <SearchInput />
+          <div className='flex gap-4 border border-zinc-300 px-4 py-2'>
+            <Checkbox
+              id='energy-sensor'
+              label='Energy sensor'
+            />
+            <Checkbox
+              id='critical'
+              label='Critical'
+            />
+          </div>
+        </div>
+        <div className='flex h-full gap-4 overflow-hidden'>
           <Elements />
           <Outlet />
         </div>

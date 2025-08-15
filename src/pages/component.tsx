@@ -45,7 +45,7 @@ export default function Component() {
   ])
 
   return (
-    <div className='m-2 flex flex-1 flex-col gap-2 overflow-auto border border-zinc-300 p-4'>
+    <div className='flex flex-1 flex-col gap-2 overflow-auto border border-zinc-300 p-4'>
       <div className='flex gap-2'>
         <span className='text-xl font-bold uppercase'>{component.name}</span>
         {component.status && (
