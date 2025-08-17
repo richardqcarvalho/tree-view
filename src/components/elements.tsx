@@ -1,6 +1,7 @@
 import { getElements } from '@/actions/element'
 import Asset from '@/components/asset'
 import Location from '@/components/location'
+import Skeleton from '@/components/skeleton'
 import { useCompanyStore, useElementStore } from '@/store'
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
@@ -25,18 +26,10 @@ export default function Elements() {
   if (isPending)
     return (
       <div className='flex flex-col gap-2 overflow-auto border border-zinc-300 p-4'>
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
-        <div className='h-6 w-72 animate-pulse rounded-sm bg-zinc-300' />
+        <Skeleton
+          count={12}
+          className='h-6 w-72 rounded-sm'
+        />
       </div>
     )
 
