@@ -1,51 +1,6 @@
 import { useCheckboxStore, useElementStore } from '@/store'
-import type { StructuredAssetT } from '@/types/asset'
-import type { StructuredLocationT } from '@/types/location'
+import { returnMatches } from '@/utils'
 import { useEffect, useState } from 'react'
-
-function returnMatches(
-  data: (StructuredAssetT | StructuredLocationT)[],
-  searchTerm: string,
-  energySensor: boolean,
-  critical: boolean,
-) {
-  const cleaned: (StructuredAssetT | StructuredLocationT)[] = data.map(
-    element => ({
-      ...element,
-      ...(element.children && {
-        children: returnMatches(
-          element.children,
-          searchTerm,
-          energySensor,
-          critical,
-        ),
-      }),
-    }),
-  )
-
-  return cleaned.filter(element => {
-    let matches = false
-    const nameMatches = element.name
-      .toUpperCase()
-      .includes(searchTerm.toUpperCase())
-    const hasChildren = element.children && element.children.length > 0
-
-    if (energySensor || critical) {
-      matches = nameMatches
-
-      if (energySensor)
-        matches =
-          matches && (element as StructuredAssetT).sensorType === 'energy'
-
-      if (critical)
-        matches = matches && (element as StructuredAssetT).status === 'alert'
-
-      return matches || hasChildren
-    }
-
-    return nameMatches || hasChildren
-  })
-}
 
 export default function SearchInput() {
   const checkboxStore = useCheckboxStore()

@@ -1,16 +1,6 @@
 import type { AssetDataT, StructuredAssetT } from '@/types/asset'
 import type { LocationDataT, StructuredLocationT } from '@/types/location'
-
-function getDepth(
-  data: (AssetDataT | LocationDataT)[],
-  elementId: string,
-  depth: number = 0,
-) {
-  const element = data.find(element => element.id === elementId)
-
-  if (element.parentId) return getDepth(data, element.parentId, depth + 1)
-  else return depth
-}
+import { getDepth } from '@/utils'
 
 export async function getElements(companyId: string) {
   const aResponse = await fetch(

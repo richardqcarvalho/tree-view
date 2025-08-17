@@ -2,7 +2,7 @@ import EnergySvg from '@/images/energy.svg?react'
 import VibrationSvg from '@/images/vibration.svg?react'
 import { useElementStore } from '@/store'
 import type { StructuredAssetT } from '@/types/asset'
-import type { StructuredLocationT } from '@/types/location'
+import { getComponentById } from '@/utils'
 import clsx from 'clsx'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
@@ -11,22 +11,6 @@ export default function Component() {
   const navigate = useNavigate()
   const { componentId } = useParams()
   const { filteredElements } = useElementStore()
-
-  function getComponentById(
-    data: (StructuredAssetT | StructuredLocationT)[],
-    id: string,
-  ): StructuredAssetT {
-    for (const element of data) {
-      if (element.id === id) return element
-      else if (element.children) {
-        const child = getComponentById(element.children, componentId)
-
-        if (child) return child
-      }
-    }
-
-    return undefined
-  }
 
   const component: StructuredAssetT = getComponentById(
     filteredElements,
