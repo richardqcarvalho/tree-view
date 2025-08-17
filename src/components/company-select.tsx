@@ -1,4 +1,5 @@
 import { getCompanies } from '@/actions/company'
+import Skeleton from '@/components/skeleton'
 import { useCompanyStore } from '@/store'
 import type { CompanyT } from '@/types/company'
 import { useQuery } from '@tanstack/react-query'
@@ -21,12 +22,10 @@ export default function CompanySelect() {
 
   if (isPending)
     return (
-      <select
-        className='flex animate-pulse items-center justify-center rounded-sm bg-zinc-300 p-1 text-white'
-        disabled
-      >
-        <option>Loading companies...</option>
-      </select>
+      <Skeleton
+        count={1}
+        className='h-6 w-36 rounded-sm'
+      />
     )
 
   return (
